@@ -12,6 +12,7 @@ export default defineConfig({
   server: {
     port: 3042,
     host: true,
+    allowedHosts: ['fair-emus-greet.loca.lt']
   },
   build: {
     outDir: 'dist',
