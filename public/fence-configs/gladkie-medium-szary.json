@@ -1,0 +1,175 @@
+{
+  "id": "gladkie-medium-szary",
+  "name": "Gładkie Medium Szare",
+  "category": "gładkie",
+  "dimensions": "80x25",
+  "color": "Szary",
+  "modelPath": "/Ogrodzenie/gladkie_medium_dae/Ogrodzenei gładkie Medium - konfigurator.dae",
+  "texturePath": "/Ogrodzenie/gladkie_medium_dae",
+  
+  "elements": {
+    "post": {
+      "description": "Słupek ogrodzenia",
+      "groups": ["group_0", "group_1"],
+      "textures": {
+        "group_0": {
+          "type": "wood",
+          "diffuse": "material_1_0.jpg",
+          "normal": "material_1_0.jpg",
+          "roughness": "material_1_0.jpg",
+          "metalness": "material_1_0.jpg",
+          "ao": "material_1_0.jpg"
+        },
+        "group_1": {
+          "type": "wood",
+          "diffuse": "material_1.jpg",
+          "normal": "material_1.jpg",
+          "roughness": "material_1.jpg",
+          "metalness": "material_1.jpg",
+          "ao": "material_1.jpg"
+        }
+      },
+      "defaultHeight": 6,
+      "spacing": 0.65,
+      "rotation": {
+        "x": 1.5708,
+        "y": 3.1416,
+        "z": 0
+      }
+    },
+    
+    "section": {
+      "description": "Przęsło między słupkami",
+      "groups": ["group_13", "group_14", "group_15", "group_16"],
+      "textures": {
+        "group_13": {
+          "type": "metal",
+          "diffuse": "Aluminum.jpg",
+          "normal": "Aluminum.jpg",
+          "roughness": "Aluminum.jpg",
+          "metalness": "Aluminum.jpg",
+          "ao": "Aluminum.jpg"
+        },
+        "group_14": {
+          "type": "wood",
+          "diffuse": "material_1_0.jpg",
+          "normal": "material_1_0.jpg",
+          "roughness": "material_1_0.jpg",
+          "metalness": "material_1_0.jpg",
+          "ao": "material_1_0.jpg"
+        },
+        "group_15": {
+          "type": "wood",
+          "diffuse": "material_1.jpg",
+          "normal": "material_1.jpg",
+          "roughness": "material_1.jpg",
+          "metalness": "material_1.jpg",
+          "ao": "material_1.jpg"
+        },
+        "group_16": {
+          "type": "wood",
+          "diffuse": "material_1_0.jpg",
+          "normal": "material_1_0.jpg",
+          "roughness": "material_1_0.jpg",
+          "metalness": "material_1_0.jpg",
+          "ao": "material_1_0.jpg"
+        }
+      },
+      "positioning": {
+        "group_13": { "y": 0.09 },
+        "group_14": { "y": 0.0 },
+        "group_15": { "y": 0.1 },
+        "group_16": { "y": 0.2 }
+      },
+      "rotation": {
+        "x": 1.5708,
+        "y": 3.1416,
+        "z": 0
+      }
+    },
+    
+    "gate": {
+      "description": "Brama ogrodzenia",
+      "groups": ["group_18", "group_19"],
+      "textures": {
+        "group_18": {
+          "type": "metal",
+          "diffuse": "Aluminum.jpg",
+          "normal": "Aluminum.jpg",
+          "roughness": "Aluminum.jpg",
+          "metalness": "Aluminum.jpg",
+          "ao": "Aluminum.jpg"
+        },
+        "group_19": {
+          "type": "metal",
+          "diffuse": "Aluminum.jpg",
+          "normal": "Aluminum.jpg",
+          "roughness": "Aluminum.jpg",
+          "metalness": "Aluminum.jpg",
+          "ao": "Aluminum.jpg"
+        }
+      },
+      "rotation": {
+        "x": 1.5708,
+        "y": 3.1416,
+        "z": 0
+      }
+    },
+    
+    "door": {
+      "description": "Furtka ogrodzenia",
+      "groups": ["group_17"],
+      "textures": {
+        "group_17": {
+          "type": "wood",
+          "diffuse": "material_1.jpg",
+          "normal": "material_1.jpg",
+          "roughness": "material_1.jpg",
+          "metalness": "material_1.jpg",
+          "ao": "material_1.jpg"
+        }
+      },
+      "rotation": {
+        "x": 1.5708,
+        "y": 3.1416,
+        "z": 0
+      }
+    }
+  },
+  
+  "materials": {
+    "wood": {
+      "roughness": 0.8,
+      "metalness": 0.1,
+      "envMapIntensity": 1.0,
+      "side": "DoubleSide",
+      "flatShading": false
+    },
+    "metal": {
+      "roughness": 0.3,
+      "metalness": 0.9,
+      "envMapIntensity": 1.2,
+      "side": "DoubleSide",
+      "flatShading": false
+    }
+  },
+  
+  "autoSection": {
+    "enabled": true,
+    "delay": 200,
+    "position": "center"
+  },
+  
+  "camera": {
+    "minDistance": 2.0,
+    "zoomSpeed": 0.5,
+    "minPolarAngle": 0,
+    "maxPolarAngle": 1.5708
+  }
+}
+
+
+
+
+
+

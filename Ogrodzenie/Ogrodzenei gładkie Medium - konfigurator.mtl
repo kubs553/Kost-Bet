@@ -1,0 +1,15 @@
+#
+## Alias OBJ Material File
+# Exported from SketchUp, (c) 2000-2012 Trimble Navigation Limited
+
+newmtl _1
+Ka 0.000000 0.000000 0.000000
+Kd 0.756863 0.756863 0.768627
+Ks 0.330000 0.330000 0.330000
+map_Kd Ogrodzenei gładkie Medium - konfigurator/_1.tif
+
+newmtl Aluminum
+Ka 0.000000 0.000000 0.000000
+Kd 0.117647 0.117647 0.117647
+Ks 0.330000 0.330000 0.330000
+

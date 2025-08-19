@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generator Tekstur Placeholder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .texture-generator {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .texture-preview {
+            margin: 20px 0;
+            text-align: center;
+        }
+        canvas {
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            margin: 10px;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .download-section {
+            margin-top: 20px;
+            padding: 15px;
+            background: #e9ecef;
+            border-radius: 5px;
+        }
+        .info {
+            background: #d1ecf1;
+            border: 1px solid #bee5eb;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎨 Generator Tekstur Placeholder</h1>
+    <p>Ten generator tworzy podstawowe tekstury dla Twojej aplikacji 3D. Kliknij "Generuj" aby stworzyć tekstury, a następnie "Pobierz wszystkie" aby je zapisać.</p>
+    
+    <div class="info">
+        <strong>💡 Wskazówka:</strong> Po wygenerowaniu tekstur, skopiuj je do katalogu <code>public/textures/</code> w Twojej aplikacji. Będą automatycznie używane w scenie 3D!
+    </div>
+
+    <div class="texture-generator">
+        <h2>🌱 Tekstura Trawy (grass.jpg)</h2>
+        <p>Podstawowa tekstura trawy dla podłoża</p>
+        <div class="texture-preview">
+            <canvas id="grassCanvas" width="512" height="512"></canvas>
+        </div>
+        <button onclick="generateGrass()">Generuj trawę</button>
+        <button onclick="downloadTexture('grassCanvas', 'grass.jpg')">Pobierz grass.jpg</button>
+    </div>
+
+    <div class="texture-generator">
+        <h2>🏠 Tekstura Cegły (brick.jpg)</h2>
+        <p>Tekstura cegły dla domu</p>
+        <div class="texture-preview">
+            <canvas id="brickCanvas" width="512" height="512"></canvas>
+        </div>
+        <button onclick="generateBrick()">Generuj cegłę</button>
+        <button onclick="downloadTexture('brickCanvas', 'brick.jpg')">Pobierz brick.jpg</button>
+    </div>
+
+    <div class="texture-generator">
+        <h2>🪵 Tekstura Drewna (wood.jpg)</h2>
+        <p>Tekstura drewna dla ogrodzeń</p>
+        <div class="texture-preview">
+            <canvas id="woodCanvas" width="512" height="512"></canvas>
+        </div>
+        <button onclick="generateWood()">Generuj drewno</button>
+        <button onclick="downloadTexture('woodCanvas', 'wood.jpg')">Pobierz wood.jpg</button>
+    </div>
+
+    <div class="texture-generator">
+        <h2>🔩 Tekstura Metalu (metal.jpg)</h2>
+        <p>Tekstura metalu dla bram</p>
+        <div class="texture-preview">
+            <canvas id="metalCanvas" width="512" height="512"></canvas>
+        </div>
+        <button onclick="generateMetal()">Generuj metal</button>
+        <button onclick="downloadTexture('metalCanvas', 'metal.jpg')">Pobierz metal.jpg</button>
+    </div>
+
+    <div class="texture-generator">
+        <h2>🧱 Tekstura Betonu (concrete.jpg)</h2>
+        <p>Tekstura betonu dla słupków</p>
+        <div class="texture-preview">
+            <canvas id="concreteCanvas" width="512" height="512"></canvas>
+        </div>
+        <button onclick="generateConcrete()">Generuj beton</button>
+        <button onclick="downloadTexture('concreteCanvas', 'concrete.jpg')">Pobierz concrete.jpg</button>
+    </div>
+
+    <div class="download-section">
+        <h3>📦 Pobierz wszystkie tekstury</h3>
+        <p>Kliknij poniższy przycisk aby pobrać wszystkie wygenerowane tekstury jako archiwum ZIP:</p>
+        <button onclick="downloadAllTextures()" style="background: #28a745; font-size: 16px; padding: 15px 30px;">
+            📥 Pobierz wszystkie tekstury
+        </button>
+        <p><small>Uwaga: Funkcja ZIP wymaga biblioteki JSZip. Jeśli nie działa, pobierz każdą teksturę osobno.</small></p>
+    </div>
+
+    <div class="info">
+        <h3>🚀 Jak używać w aplikacji:</h3>
+        <ol>
+            <li>Kliknij "Generuj" dla każdej tekstury</li>
+            <li>Pobierz wszystkie tekstury</li>
+            <li>Skopiuj pliki do <code>public/textures/</code> w Twojej aplikacji</li>
+            <li>Uruchom aplikację i sprawdź tryb 3D</li>
+            <li>Tekstury będą automatycznie załadowane!</li>
+        </ol>
+    </div>
+
+    <script>
+        // Generowanie tekstury trawy
+        function generateGrass() {
+            const canvas = document.getElementById('grassCanvas');
+            const ctx = canvas.getContext('2d');
+            
+            // Tło
+            ctx.fillStyle = '#4a7c59';
+            ctx.fillRect(0, 0, 512, 512);
+            
+            // Dodaj wzór trawy
+            for (let i = 0; i < 1000; i++) {
+                const x = Math.random() * 512;
+                const y = Math.random() * 512;
+                const length = Math.random() * 20 + 10;
+                const angle = Math.random() * Math.PI;
+                
+                ctx.strokeStyle = `hsl(${90 + Math.random() * 20}, 50%, ${30 + Math.random() * 20}%)`;
+                ctx.lineWidth = Math.random() * 2 + 1;
+                
+                ctx.beginPath();
+                ctx.moveTo(x, y);
+                ctx.lineTo(x + Math.cos(angle) * length, y + Math.sin(angle) * length);
+                ctx.stroke();
+            }
+        }
+
+        // Generowanie tekstury cegły
+        function generateBrick() {
+            const canvas = document.getElementById('brickCanvas');
+            const ctx = canvas.getContext('2d');
+            
+            // Tło
+            ctx.fillStyle = '#d4a574';
+            ctx.fillRect(0, 0, 512, 512);
+            
+            // Wzór cegieł
+            const brickWidth = 64;
+            const brickHeight = 32;
+            
+            for (let row = 0; row < 16; row++) {
+                for (let col = 0; col < 8; col++) {
+                    const x = col * brickWidth + (row % 2) * (brickWidth / 2);
+                    const y = row * brickHeight;
+                    
+                    // Kolor cegły
+                    const hue = 30 + Math.random() * 20;
+                    const saturation = 40 + Math.random() * 20;
+                    const lightness = 50 + Math.random() * 20;
+                    ctx.fillStyle = `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+                    
+                    ctx.fillRect(x, y, brickWidth - 2, brickHeight - 2);
+                    
+                    // Linie między cegłami
+                    ctx.strokeStyle = '#8b4513';
+                    ctx.lineWidth = 1;
+                    ctx.strokeRect(x, y, brickWidth - 2, brickHeight - 2);
+                }
+            }
+        }
+
+        // Generowanie tekstury drewna
+        function generateWood() {
+            const canvas = document.getElementById('woodCanvas');
+            const ctx = canvas.getContext('2d');
+            
+            // Tło
+            ctx.fillStyle = '#8b4513';
+            ctx.fillRect(0, 0, 512, 512);
+            
+            // Wzór drewna
+            for (let i = 0; i < 512; i += 4) {
+                const hue = 30 + Math.random() * 20;
+                const saturation = 40 + Math.random() * 20;
+                const lightness = 30 + Math.random() * 20;
+                ctx.strokeStyle = `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+                ctx.lineWidth = 2;
+                
+                ctx.beginPath();
+                ctx.moveTo(i, 0);
+                ctx.lineTo(i, 512);
+                ctx.stroke();
+            }
+        }
+
+        // Generowanie tekstury metalu
+        function generateMetal() {
+            const canvas = document.getElementById('metalCanvas');
+            const ctx = canvas.getContext('2d');
+            
+            // Gradient metalu
+            const gradient = ctx.createLinearGradient(0, 0, 512, 512);
+            gradient.addColorStop(0, '#c0c0c0');
+            gradient.addColorStop(0.5, '#e0e0e0');
+            gradient.addColorStop(1, '#a0a0a0');
+            
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, 512, 512);
+            
+            // Dodaj połysk
+            for (let i = 0; i < 10; i++) {
+                const x = Math.random() * 512;
+                const y = Math.random() * 512;
+                const radius = Math.random() * 50 + 20;
+                
+                const radialGradient = ctx.createRadialGradient(x, y, 0, x, y, radius);
+                radialGradient.addColorStop(0, 'rgba(255, 255, 255, 0.8)');
+                radialGradient.addColorStop(1, 'rgba(255, 255, 255, 0)');
+                
+                ctx.fillStyle = radialGradient;
+                ctx.fillRect(x - radius, y - radius, radius * 2, radius * 2);
+            }
+        }
+
+        // Generowanie tekstury betonu
+        function generateConcrete() {
+            const canvas = document.getElementById('concreteCanvas');
+            const ctx = canvas.getContext('2d');
+            
+            // Tło
+            ctx.fillStyle = '#808080';
+            ctx.fillRect(0, 0, 512, 512);
+            
+            // Wzór betonu
+            for (let i = 0; i < 2000; i++) {
+                const x = Math.random() * 512;
+                const y = Math.random() * 512;
+                const size = Math.random() * 3 + 1;
+                
+                const lightness = 40 + Math.random() * 30;
+                ctx.fillStyle = `hsl(0, 0%, ${lightness}%)`;
+                
+                ctx.fillRect(x, y, size, size);
+            }
+        }
+
+        // Pobieranie pojedynczej tekstury
+        function downloadTexture(canvasId, filename) {
+            const canvas = document.getElementById(canvasId);
+            const link = document.createElement('a');
+            link.download = filename;
+            link.href = canvas.toDataURL('image/jpeg', 0.8);
+            link.click();
+        }
+
+        // Pobieranie wszystkich tekstur
+        function downloadAllTextures() {
+            // Generuj wszystkie tekstury jeśli nie są jeszcze wygenerowane
+            generateGrass();
+            generateBrick();
+            generateWood();
+            generateMetal();
+            generateConcrete();
+            
+            // Pobierz każdą osobno
+            setTimeout(() => {
+                downloadTexture('grassCanvas', 'grass.jpg');
+                setTimeout(() => downloadTexture('brickCanvas', 'brick.jpg'), 100);
+                setTimeout(() => downloadTexture('woodCanvas', 'wood.jpg'), 200);
+                setTimeout(() => downloadTexture('metalCanvas', 'metal.jpg'), 300);
+                setTimeout(() => downloadTexture('concreteCanvas', 'concrete.jpg'), 400);
+            }, 100);
+        }
+
+        // Generuj wszystkie tekstury przy załadowaniu
+        window.onload = function() {
+            generateGrass();
+            generateBrick();
+            generateWood();
+            generateMetal();
+            generateConcrete();
+        };
+    </script>
+</body>
+</html>
+

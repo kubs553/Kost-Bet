@@ -1,0 +1,138 @@
+{
+  "project": {
+    "name": "Przykładowe ogrodzenie",
+    "description": "Demonstracyjny projekt ogrodzenia z wszystkimi elementami",
+    "created": "2024-01-15T10:00:00Z",
+    "system": {
+      "id": "smooth-medium",
+      "name": "Ogrodzenie gładkie Medium",
+      "basePrice": 150
+    },
+    "houseStyle": {
+      "id": "modern",
+      "name": "Nowoczesny"
+    },
+    "elements": [
+      {
+        "id": "post-1",
+        "type": "post",
+        "position": { "x": 0, "y": 0, "z": 0 },
+        "rotation": 0,
+        "width": 0.1,
+        "height": 2.0,
+        "material": "smooth-medium",
+        "price": 50
+      },
+      {
+        "id": "section-1",
+        "type": "section",
+        "position": { "x": 2.0, "y": 0, "z": 0 },
+        "rotation": 0,
+        "width": 2.0,
+        "height": 2.0,
+        "material": "smooth-medium",
+        "price": 200
+      },
+      {
+        "id": "post-2",
+        "type": "post",
+        "position": { "x": 4.0, "y": 0, "z": 0 },
+        "rotation": 0,
+        "width": 0.1,
+        "height": 2.0,
+        "material": "smooth-medium",
+        "price": 50
+      },
+      {
+        "id": "gate-1",
+        "type": "gate",
+        "position": { "x": 6.0, "y": 0, "z": 0 },
+        "rotation": 0,
+        "width": 3.0,
+        "height": 2.0,
+        "material": "smooth-medium",
+        "price": 1200
+      },
+      {
+        "id": "post-3",
+        "type": "post",
+        "position": { "x": 9.0, "y": 0, "z": 0 },
+        "rotation": 0,
+        "width": 0.1,
+        "height": 2.0,
+        "material": "smooth-medium",
+        "price": 50
+      },
+      {
+        "id": "section-2",
+        "type": "section",
+        "position": { "x": 11.0, "y": 0, "z": 0 },
+        "rotation": 0,
+        "width": 2.0,
+        "height": 2.0,
+        "material": "smooth-medium",
+        "price": 200
+      },
+      {
+        "id": "post-4",
+        "type": "post",
+        "position": { "x": 13.0, "y": 0, "z": 0 },
+        "rotation": 0,
+        "width": 0.1,
+        "height": 2.0,
+        "material": "smooth-medium",
+        "price": 50
+      },
+      {
+        "id": "door-1",
+        "type": "door",
+        "position": { "x": 15.0, "y": 0, "z": 0 },
+        "rotation": 0,
+        "width": 1.0,
+        "height": 2.0,
+        "material": "smooth-medium",
+        "price": 600
+      },
+      {
+        "id": "post-5",
+        "type": "post",
+        "position": { "x": 16.0, "y": 0, "z": 0 },
+        "rotation": 0,
+        "width": 0.1,
+        "height": 2.0,
+        "material": "smooth-medium",
+        "price": 50
+      },
+      {
+        "id": "section-3",
+        "type": "section",
+        "position": { "x": 18.0, "y": 0, "z": 0 },
+        "rotation": 0,
+        "width": 2.0,
+        "height": 2.0,
+        "material": "smooth-medium",
+        "price": 200
+      },
+      {
+        "id": "post-6",
+        "type": "post",
+        "position": { "x": 20.0, "y": 0, "z": 0 },
+        "rotation": 0,
+        "width": 0.1,
+        "height": 2.0,
+        "material": "smooth-medium",
+        "price": 50
+      }
+    ],
+    "totals": {
+      "length": 20.0,
+      "elements": 11,
+      "posts": 6,
+      "sections": 3,
+      "gates": 1,
+      "doors": 1,
+      "totalPrice": 2700
+    },
+    "isClosed": true
+  }
+}

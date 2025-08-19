@@ -1,0 +1,45 @@
+{
+  "name": "kost-bet-fence-configurator",
+  "version": "1.0.0",
+  "description": "Konfigurator ogrodzeń 2D/3D z kalkulacją cen",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "start": "node server/index.js"
+  },
+  "dependencies": {
+    "three": "^0.162.0",
+    "three-stdlib": "^2.29.5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.22.3",
+    "@react-three/fiber": "^8.17.5",
+    "@react-three/drei": "^9.102.6",
+    "@react-three/postprocessing": "^2.16.1",
+    "framer-motion": "^11.10.8",
+    "lucide-react": "^0.460.0",
+    "jspdf": "^2.5.1",
+    "html2canvas": "^1.4.1",
+    "zustand": "^4.5.2",
+    "express": "^4.19.2",
+    "cors": "^2.8.5",
+    "multer": "^1.4.5-lts.1",
+    "sharp": "^0.33.2"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@types/three": "^0.162.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "typescript": "^5.6.3",
+    "vite": "^5.3.4",
+    "tailwindcss": "^3.4.3",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49"
+  },
+  "keywords": ["fence", "configurator", "3d", "react", "three.js"],
+  "author": "Kost-Bet",
+  "license": "MIT"
+}
